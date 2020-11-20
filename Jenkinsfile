@@ -4,9 +4,10 @@ node {
   }
   stage('SonarQube analysis') {
 
-    withSonarQubeEnv('sonarqube', envOnly: true) { // If you have configured more than one global server connection, you can specify its name
+    withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
        SONAR_AUTH_TOKEN
-       println ${env.SONAR_HOST_URL}
+       println 2
+       println $(env.SONAR_HOST_URL)
   
     }
   }
