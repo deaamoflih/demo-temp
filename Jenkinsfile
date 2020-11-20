@@ -3,11 +3,9 @@ node {
     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '2678cf77-021c-4c49-a946-a53e8ac24424', url: 'https://github.com/deaamoflih/demo-temp']]])
   }
   stage('SonarQube analysis') {
-
-    withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-       SONAR_AUTH_TOKEN
-       println 2
-       println $SONAR_HOST_URL
+      def scannerHome = tool 'sonarqube';
+      withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
+      sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
   
     }
   }
