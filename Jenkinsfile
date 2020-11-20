@@ -7,7 +7,7 @@ node {
     withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
        SONAR_AUTH_TOKEN
        println 2
-       println $(env.SONAR_HOST_URL)
+       println $SONAR_HOST_URL
   
     }
   }
