@@ -5,7 +5,7 @@ node {
   stage('SonarQube analysis') {
       def scannerHome = tool 'sonarqube';
       withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-      sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
+      sh "mvn sonar:sonar -Dsonar.host.url=http://20.73.141.154:9000/ -Dsonar.login=6b70c5d43f2c06c306709dea0fd086bab2054e62"
   
     }
   }
