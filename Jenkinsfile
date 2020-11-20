@@ -5,8 +5,8 @@ node {
   stage('SonarQube analysis') {
       def scannerHome = tool 'sonarqube';
       withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-      sh "export MAVEN_HOME=/opt/maven"
-        sh "export PATH=$PATH:$MAVEN_HOME/bin"
+
+  
         sh "mvn --version"
   
     }
