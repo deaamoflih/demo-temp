@@ -5,9 +5,12 @@ node {
   stage('SonarQube analysis') {
       def scannerHome = tool 'sonarqube';
       withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-
-  
-        sh "mvn --version"
+      def mvn_version = ''
+    
+       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) 
+  {   
+      sh  'mvn clean package'
+  }
   
     }
   }
