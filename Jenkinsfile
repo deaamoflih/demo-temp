@@ -6,11 +6,10 @@ node {
       def scannerHome = tool 'sonarqube';
       withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
       def mvn_version = ''
-    
-       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) 
-  {   
-      sh  'mvn clean package'
-  }
+      def mvn_version = tool 'mvn';
+       withEnv ('mvn')   
+        sh  'mvn clean package'
+  
   
     }
   }
