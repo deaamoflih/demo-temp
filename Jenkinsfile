@@ -10,7 +10,7 @@ node {
         def mvnHome = tool name: 'mvn', type: 'maven' 
          def scannerHome = tool 'sonarqube';
         sh "${mvnHome}/bin/mvn package"
-        sh "${mvnHome}/bin/mvn sonar:sonar  -Dsonar.projectName=possible -Dsonar.projectKey=pro22"
+        sh "${mvnHome}/bin/mvn sonar:sonar  -Dsonar.projectName=1"
   
                 }
                 }
