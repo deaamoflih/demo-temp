@@ -11,6 +11,7 @@ node {
          def scannerHome = tool 'sonarqube';
         sh "${mvnHome}/bin/mvn package"
         sh "${mvnHome}/bin/mvn sonar:sonar -Dsonar.host.url=http://20.73.141.154:9000 -Dsonar.projectName=possible -Dsonar.projectKey=pro22"
+          println ${env.SONAR_HOST_URL}
                 }
                 }
   }
