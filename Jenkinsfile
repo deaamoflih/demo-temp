@@ -6,8 +6,9 @@ node {
   }
   stage('Build') {
       withMaven { 
- 
-        sh "mvn clean verify"
+        
+        def mvnHome = tool name: 'mvn', type: 'maven' 
+        sh "${mvnHome}/bin/mvn package"
   
     }
   }
