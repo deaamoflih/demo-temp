@@ -7,7 +7,9 @@ node {
   stage('Build') {
       withMaven {  
         def mvnHome = tool name: 'mvn', type: 'maven' 
+         def scannerHome = tool 'sonarqube';
         sh "${mvnHome}/bin/mvn package"
+        sh "mvn sonar:sonar -Dsonar.host.url=http://20.73.141.154:9000"
                 }
                 }
   stage ('SonarQube analysis') {
