@@ -8,6 +8,7 @@ node {
         sh "echo ${env.SONAR_HOST_URL}"
         sh "echo ${env.SONAR_CONFIG_NAME}"
         sh "printenv"
+        sh "echo ${env.PROJECT_NAME}"
        sh "${scannerHome}/bin/sonar-scanner"
   
   
