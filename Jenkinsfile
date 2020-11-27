@@ -5,7 +5,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/testing_ohne_proprites']], doGe
       def scannerHome = tool 'sonarqube';
       withSonarQubeEnv('sonarqube') { 
        
-           def mvnHome = tool name: 'mvn', type: 'maven'
+    
           sh "echo ${scannerHome}"
           sh "echo ${env.JOB_NAME}"
           sh "echo ${env.BRANCH_NAME}"
