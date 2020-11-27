@@ -21,4 +21,4 @@ checkout([$class: 'GitSCM', branches: [[name: '*/testing_ohne_proprites']], doGe
 }
 
 
-###-D sonar.host.url=127.0.0.1:9000
+//### -D sonar.host.url=127.0.0.1:9000
