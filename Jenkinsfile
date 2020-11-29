@@ -21,7 +21,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/testing_ohne_proprites']], doGe
     { echo "Stage failed, but we continue"  
  } 
    stage('testing') {
-sh "SUCCESS"  }
+sh " echo 'SUCCESS' "  }
   
 }
 
