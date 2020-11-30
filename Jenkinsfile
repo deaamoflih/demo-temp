@@ -2,11 +2,11 @@
 
 
   node { 
-          stage('SCM') {
-checkout([$class: 'GitSCM', branches: [[name: '*/testing_ohne_proprites']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])  }
+          stage('SCM_testing_keys') {
+checkout([$class: 'GitSCM', branches: [[name: '*/test_keys']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])  }
       
      
-  stage('SonarQube analysis') {
+  stage('Code analysis') {
      def scannerHome = tool 'sonarqube';
      withSonarQubeEnv('sonarqube') { 
         sh "echo ${scannerHome}"
