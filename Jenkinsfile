@@ -14,12 +14,12 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
         sh "echo ${scannerHome}"
         sh "echo ${env.JOB_NAME}"
        sh 'printenv'
-       if (env.JOB_NAME == 'demo-temp') {
+       if (env.JOB_NAME == 'demo_develop') {
          
                              sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey='develop' -Dsonar.sources='./' -Dsonar.branch=develop  " 
                         }
        else {
-         sh "skipping"
+         sh "echo 'skipping' "
        }
  
     
