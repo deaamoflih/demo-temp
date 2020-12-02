@@ -14,7 +14,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmodule
         sh "echo ${env.JOB_NAME}"
        sh "echo ${env.BRANCH_NAME}"
  
-     sh "${scannerHome}/bin/sonar-scanner ${branch != 'develop'  -Dsonar.branch.name=${branch}   " 
+     sh "${scannerHome}/bin/sonar-scanner -Dsonar.scm.disabled=true ${branch != 'develop'}   " 
      }
   }
   
