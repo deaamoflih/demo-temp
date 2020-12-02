@@ -3,7 +3,7 @@
 
   node { 
           stage('SCM_testing_keys') {
-checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])
+checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])
           }
       
      
@@ -14,7 +14,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmodule
         sh "echo ${env.JOB_NAME}"
        sh "echo ${env.BRANCH_NAME}"
  
-     sh "${scannerHome}/bin/sonar-scanner -Dsonar.scm.disabled=true ${branch != 'develop'}   " 
+     sh "${scannerHome}/bin/sonar-scanner -Dsonar.scm.disabled=true -Dsonar.branch=develop  " 
      }
   }
   
