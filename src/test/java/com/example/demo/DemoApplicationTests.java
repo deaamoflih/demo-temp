@@ -8,7 +8,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() 
-	das ist jjj and nit dev
+	
 	{
 	}
 
