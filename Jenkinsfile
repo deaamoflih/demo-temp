@@ -8,20 +8,23 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
       
      
   stage('Code analysis') {
-    parallel (
+   
      def scannerHome = tool 'sonarqube';
      withSonarQubeEnv('sonarqube') { 
         sh "echo ${scannerHome}"
         sh "echo ${env.JOB_NAME}"
        sh 'printenv'
-       if (${env.JOB_NAME=demo-temp) {
+       if (env.JOB_NAME == 'demo-temp') {
          
                              sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey='develop' -Dsonar.sources='./' -Dsonar.branch=develop  " 
                         }
+       else {
+         sh "skipping"
+       }
  
     
      }
-      )
+   
   }
   
 }
