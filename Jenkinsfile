@@ -3,7 +3,7 @@
 
   node { 
           stage('SCM_testing_keys') {
-checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])
+checkout([$class: 'GitSCM', branches: [[name: '*/develop'], [name: '*/master'], [name: '*/test_keys']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])
           }
       
      
