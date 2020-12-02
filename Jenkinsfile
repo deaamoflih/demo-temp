@@ -3,7 +3,16 @@
 
   node { 
           stage('SCM_testing_keys_k') {
+            steps {
+              parallel (
+                para1 : {
+                  echo "jooo"
+                  sleep 10
+                };
+                para2 : {
 checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])
+          };
+                }      
           }
       
      
