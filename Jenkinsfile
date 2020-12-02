@@ -12,7 +12,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
      withSonarQubeEnv('sonarqube') { 
         sh "echo ${scannerHome}"
         sh "echo ${env.JOB_NAME}"
-       sh "echo ${env.BRANCH_NAME}"
+       sh 'printenv'
  
      sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey='develop' -Dsonar.sources='./' -Dsonar.branch=develop  " 
      }
