@@ -14,7 +14,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmodule
         sh "echo ${env.JOB_NAME}"
        sh "echo ${env.BRANCH_NAME}"
  
-     sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectName='testing' -Dsonar.projectKey='${env.JOB_NAME.split('/')[0]}' -Dsonar.sources='./' -Dsonar.branch=test_keys   " 
+     sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectName='testing' -Dsonar.projectKey='${env.JOB_NAME.split('/')[0]}' -Dsonar.sources='./' -Dsonar.branch=test_keweewys   " 
      }
   }
   
