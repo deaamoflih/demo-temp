@@ -14,8 +14,11 @@
                     }
                 }
                 stage('parallel stage 2') {
+                     when {
+                      expression { env.JOB_NAME == "demo_develop" }
+                    }
                     steps {
-                        echo 'something 2'
+                        echo 'this one'
                     }
                 }
             }
