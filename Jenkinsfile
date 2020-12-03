@@ -1,22 +1,12 @@
- pipeline { 
-
-
-            stage('para') {
-                parallel {
-                    stage('one') {
-                        steps {
-                            script {
-                               sh "echo 'one' "
-                            }
-                        }
-                    }
-                    stage('two') {
-                        steps {
-                            script {
-                                sh "echo 'two' "
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+stage('run-parallel-branches') {
+  steps {
+    parallel(
+      a: {
+        echo "This is branch a"
+      },
+      b: {
+        echo "This is branch b"
+      }
+    )
+  }
+}
