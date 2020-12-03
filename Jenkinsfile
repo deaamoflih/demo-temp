@@ -1,3 +1,5 @@
+node {
+
 stage('run-parallel-branches') {
   steps {
     parallel(
@@ -9,4 +11,5 @@ stage('run-parallel-branches') {
       }
     )
   }
+}
 }
