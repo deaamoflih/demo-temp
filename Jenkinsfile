@@ -1,19 +1,19 @@
-pipeline {
-  stages {
-    stage("Work 1"){
-     steps{
-      parallel ( "Build common Library":   
-            {
-              node('<Label>'){
-                  sh "echo ss"
-                  }
-            },
-
-        "Build Utilities" : {
-            node('<Label>'){
-               sh "echo ssss"
-              }
-           }
-         )
+node {
+  
+  
+ parallel firstBranch: {
+    stage ('Starting Test') 
+    {
+        sh "echo 'ss' " 
     }
+}, secondBranch: {
+    stage ('Starting Test2') 
+    {
+        sh "echo 'ss' "
+    }
+} 
+  
+  
+  
+  
 }
