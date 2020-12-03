@@ -1,15 +1,19 @@
 pipeline {
-    agent none
-  stage("Parallel") {
-    steps {
-        parallel (
-            "firstTask" : {
-                sh "echo ss"
+  stages {
+    stage("Work 1"){
+     steps{
+      parallel ( "Build common Library":   
+            {
+              node('<Label>'){
+                  sh "echo ss"
+                  }
             },
-            "secondTask" : {
-                sh "echo ssssss"
-            }
-        )
+
+        "Build Utilities" : {
+            node('<Label>'){
+               sh "echo ssss"
+              }
+           }
+         )
     }
-}
 }
