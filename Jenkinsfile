@@ -1,12 +1,11 @@
 
 
-
   node { 
           stage('SCM_testing_keys_kpppp') {
-            steps {
+            
 
 checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/deaamoflih/demo-temp']]])
-          }
+        
           }
                      
           
@@ -33,6 +32,3 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
   }
   
 }
-
-
-
