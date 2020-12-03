@@ -7,7 +7,7 @@
             parallel {
                 stage('parallel stage 1') {
                     when {
-                      expression { env.JOB_NAME == "demo_develop" }
+                      expression { env.JOB_NAME == "demo_developooo" }
                     }
                     steps {
                         echo 'yes'
