@@ -24,3 +24,4 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
 //-Dsonar.projectKey=${env.JOB_NAME.split('/')[0]}
 //-Dsonar.projectKey=${env.JOB_NAME.split('/')[0]}
     //-Dsonar.projectName='testing' -Dsonar.projectKey='${env.JOB_NAME.split('/')[0]}' -Dsonar.sources='./' -Dsonar.branch=test_keweewys
+// -Dsonar.scm.disabled=true
