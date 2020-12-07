@@ -13,7 +13,6 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
         sh "echo ${scannerHome}"
         sh "echo ${env.JOB_NAME}"
        sh "echo ${env.BRANCH_NAME}"
-       sh "echo ${GIT_BRANCH.split("/")[1]}"
        sh "printenv"
        def BRANCH = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
        sh "echo ${BRANCH}"
