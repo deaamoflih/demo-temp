@@ -13,11 +13,6 @@ checkout([$class: 'GitSCM', branches: [[name: '*/*']], doGenerateSubmoduleConfig
         sh "echo ${scannerHome}"
         sh "echo ${env.JOB_NAME}"
        sh "echo ${env.BRANCH_NAME}"
-       sh '''
-            git rev-parse --abbrev-ref HEAD > GIT_BRANCH'
-            git_branch = readFile('GIT_BRANCH').trim()
-            echo git_branch
-         '''
   
  
      sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName='${env.JOB_NAME}' -Dsonar.projectKey='${env.JOB_NAME}' -Dsonar.sources='src/' -Dsonar.language=java  -Dsonar.branch='/branch-mastro' " 
